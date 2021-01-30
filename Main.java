@@ -1,21 +1,95 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
     static Scanner scn = new Scanner(System.in);
     public static void main(String[] args) {
-        int a, x , y , z;
-        int[] b, c;
-
-        a = scn.nextInt();
-        c = new int[a];
-
-        x = scn.nextInt();
-        y = scn.nextInt();
-        z = scn.nextInt();
-
-        for(int i = 0; i < a; i++) {
-            c[i] = scn.nextInt();
+        int N = scn.nextInt();
+        int x = scn.nextInt();
+        ArrayList<Integer> xlist = new ArrayList<Integer>();
+        int y = scn.nextInt();
+        ArrayList<Integer> ylist = new ArrayList<Integer>();
+        int z = scn.nextInt();
+        ArrayList<Integer> zlist = new ArrayList<Integer>();
+        int sum = 0;
+        int [] lettuce = new int[N];
+        for (int i = 0; i < lettuce.length; i++){
+            lettuce[i] = scn.nextInt();
+            if (lettuce[i] == x) xlist.add(x);
+            if (lettuce[i] == y) xlist.add(y);
+            if (lettuce[i] == z) xlist.add(z);
+            sum += lettuce[i];
+        }
+        int Alice = sum / 2;
+        int Bob = sum / 2;
+        if (Alice / z >= 1){//300
+            int tmp = Alice / z;
+            for (int i = 0; i < tmp; i++){
+                if (zlist.size() == 0) break;
+                else {
+                    Alice -= z;//300
+                    zlist.remove(0);
+                }
+            }
+        }
+        else if (Alice / y >= 1){//200
+            int tmp = Alice / y;
+            for (int i = 0; i < tmp; i++){
+                if (ylist.size() == 0) break;
+                else {
+                    Alice -= y;//200
+                    ylist.remove(0);
+                }
+            }
+        }
+        else if (Alice / x >= 1){//100
+            int tmp = Alice / x;
+            for (int i = 0; i < tmp; i++){
+                if (xlist.size() == 0) break;
+                else {
+                    Alice -= x;//100
+                    xlist.remove(0);
+                }
+            }
+        }
+        if (Bob / z >= 1){
+            int tmp = Bob / x;
+            for (int i = 0; i < tmp; i++){
+                if (xlist.size() == 0) break;
+                else {
+                    Bob -= x;//100
+                    xlist.remove(0);
+                }
+            }
+        }
+        else if (Bob / y >= 1){
+            int tmp = Bob / x;
+            for (int i = 0; i < tmp; i++){
+                if (xlist.size() == 0) break;
+                else {
+                    Bob -= x;//100
+                    xlist.remove(0);
+                }
+            }
+        }
+        else if (Bob / x >= 1){
+            int tmp = Bob / x;
+            for (int i = 0; i < tmp; i++){
+                if (xlist.size() == 0) break;
+                else {
+                    Bob -= x;//100
+                    xlist.remove(0);
+                }
+            }
+        }
+        if (Bob == 0 && Alice == 0 && xlist.size() == 0 && ylist.size() == 0 && zlist.size() == 0) System.out.println("YES");
+        else {
+            System.out.println("NO");
+            System.out.println("Alice"+Alice);
+            System.out.println("Bob"+Bob);
+            System.out.println("Xlist"+xlist.size());
+            System.out.println("Ylist"+ylist.size());
+            System.out.println("Zlist"+zlist.size());
         }
     }
-    
 }
