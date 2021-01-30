@@ -16,8 +16,8 @@ public class Main {
         for (int i = 0; i < lettuce.length; i++){
             lettuce[i] = scn.nextInt();
             if (lettuce[i] == x) xlist.add(x);
-            if (lettuce[i] == y) xlist.add(y);
-            if (lettuce[i] == z) xlist.add(z);
+            if (lettuce[i] == y) ylist.add(y);
+            if (lettuce[i] == z) zlist.add(z);
             sum += lettuce[i];
         }
         int Alice = sum / 2;
@@ -31,8 +31,9 @@ public class Main {
                     zlist.remove(0);
                 }
             }
+            System.out.println("Alice"+Alice);
         }
-        else if (Alice / y >= 1){//200
+        if (Alice / y >= 1){//200
             int tmp = Alice / y;
             for (int i = 0; i < tmp; i++){
                 if (ylist.size() == 0) break;
@@ -41,8 +42,9 @@ public class Main {
                     ylist.remove(0);
                 }
             }
+            System.out.println("Alice"+Alice);
         }
-        else if (Alice / x >= 1){//100
+        if (Alice / x >= 1){//100
             int tmp = Alice / x;
             for (int i = 0; i < tmp; i++){
                 if (xlist.size() == 0) break;
@@ -51,28 +53,32 @@ public class Main {
                     xlist.remove(0);
                 }
             }
+            System.out.println("Alice"+Alice);
         }
+        System.out.println("Bob"+Bob);
         if (Bob / z >= 1){
-            int tmp = Bob / x;
+            int tmp = Bob / z;
             for (int i = 0; i < tmp; i++){
-                if (xlist.size() == 0) break;
+                if (zlist.size() == 0) break;
                 else {
-                    Bob -= x;//100
-                    xlist.remove(0);
+                    Bob -= z;//100
+                    zlist.remove(0);
                 }
             }
+            System.out.println("Bob"+Bob);
         }
-        else if (Bob / y >= 1){
-            int tmp = Bob / x;
+        if (Bob / y >= 1){
+            int tmp = Bob / y;
             for (int i = 0; i < tmp; i++){
-                if (xlist.size() == 0) break;
+                if (ylist.size() == 0) break;
                 else {
-                    Bob -= x;//100
-                    xlist.remove(0);
+                    Bob -= y;//100
+                    ylist.remove(0);
                 }
             }
+            System.out.println("Bob"+Bob);
         }
-        else if (Bob / x >= 1){
+        if (Bob / x >= 1){
             int tmp = Bob / x;
             for (int i = 0; i < tmp; i++){
                 if (xlist.size() == 0) break;
@@ -81,6 +87,7 @@ public class Main {
                     xlist.remove(0);
                 }
             }
+            System.out.println("Bob"+Bob);
         }
         if (Bob == 0 && Alice == 0 && xlist.size() == 0 && ylist.size() == 0 && zlist.size() == 0) System.out.println("YES");
         else {
