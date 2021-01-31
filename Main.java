@@ -31,7 +31,6 @@ public class Main {
                     zlist.remove(0);
                 }
             }
-            System.out.println("Alice"+Alice);
         }
         if (Alice / y >= 1){//200
             int tmp = Alice / y;
@@ -42,7 +41,6 @@ public class Main {
                     ylist.remove(0);
                 }
             }
-            System.out.println("Alice"+Alice);
         }
         if (Alice / x >= 1){//100
             int tmp = Alice / x;
@@ -53,9 +51,7 @@ public class Main {
                     xlist.remove(0);
                 }
             }
-            System.out.println("Alice"+Alice);
         }
-        System.out.println("Bob"+Bob);
         if (Bob / z >= 1){
             int tmp = Bob / z;
             for (int i = 0; i < tmp; i++){
@@ -65,7 +61,6 @@ public class Main {
                     zlist.remove(0);
                 }
             }
-            System.out.println("Bob"+Bob);
         }
         if (Bob / y >= 1){
             int tmp = Bob / y;
@@ -76,7 +71,6 @@ public class Main {
                     ylist.remove(0);
                 }
             }
-            System.out.println("Bob"+Bob);
         }
         if (Bob / x >= 1){
             int tmp = Bob / x;
@@ -87,16 +81,8 @@ public class Main {
                     xlist.remove(0);
                 }
             }
-            System.out.println("Bob"+Bob);
         }
         if (Bob == 0 && Alice == 0 && xlist.size() == 0 && ylist.size() == 0 && zlist.size() == 0) System.out.println("YES");
-        else {
-            System.out.println("NO");
-            System.out.println("Alice"+Alice);
-            System.out.println("Bob"+Bob);
-            System.out.println("Xlist"+xlist.size());
-            System.out.println("Ylist"+ylist.size());
-            System.out.println("Zlist"+zlist.size());
-        }
+        else System.out.println("NO");
     }
 }

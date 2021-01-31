@@ -13,8 +13,7 @@ public class Main2 {
         while(round <= testCase) {
             n = scn.nextInt(); //monster count
             r = scn.nextInt(); //radius
-            x = new int[n];    //All monster position
-
+            x = new int[n];    //All monster posit
             for(int i = 0; i < n; i++) {
                 //Continue to next input if there're the same
                 /* int in = scn.nextInt();
