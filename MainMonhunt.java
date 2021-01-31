@@ -9,11 +9,8 @@ public class Main {
         int n, r,testCase, xPosition = 0;
         int [] rock;
         ArrayList<Integer> y;
-
         testCase = scn.nextInt();//2
         rock = new int[testCase];
-
-        //while(round < testCase) {
         for (int round = 0; round < testCase; round++) {
             n = scn.nextInt(); //จน.มอน
             r = scn.nextInt(); //ระยะกระเด็น
@@ -39,25 +36,4 @@ public class Main {
         for (int i = 0; i < testCase; i++) System.out.println(rock[i]);
     }
 }
-//for (int i = 0; i < y.length; i++) System.out.println(y[i]);
-//}
 
-            /*for(int i = 0; i < n; i++) {
-                //Continue to next input if there're the same
-                /* int in = scn.nextInt();
-                if(in)
-                //Comment code
-                x[i] = scn.nextInt(); //monster
-                xPosition += x[i];
-            }
-             */
-
-//Arrays.sort(x);
-
-            /*for(int i = x.length - 1; xPosition > 0; ) {
-                Collections.max(x);
-                xPosition -= i; //when catapult shoot
-                rock++;
-            }
-            System.out.println(rock);
-            round++;*/
