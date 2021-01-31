@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class Main {
@@ -17,15 +16,18 @@ public class Main {
             y = new ArrayList<Integer>();    //All monster posit
             for (int i = 0; i < n; i++) y.add(i, scn.nextInt());
             Collections.sort(y);
-
             while (y.size() > 0) {//รอบ1 j = 1//รอบ2 j = 2
                 rock[round]++;
-                for (int i = y.size() - 1; i > 0; i--){
-                    if (y.get(i) == y.get(i - 1)) {
-                        y.remove(i);
+                for (int i = y.size() - 1; i >= 0; i--){//3//2//1//0
+                    if (i == 0) {
+                        y.remove(i);//
+                        break;
+                    }
+                    else if (y.get(i) == y.get(i - 1)) {//5 == 5//5 == 5//5 == 5
+                        y.remove(i);//5 5 5//5 5//5
                     }
                     else {
-                        y.remove(i);
+                        y.remove(i);//
                         break;
                     }
                 }
