@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Collections;
 
-public class Main {
+public class MainMonhunt {
     static Scanner scn = new Scanner(System.in);
     public static void main(String[] args) {
-        int n, r,testCase, xPosition = 0;
+        int n, r,testCase;
         int [] rock;
         ArrayList<Integer> y;
         testCase = scn.nextInt();//2
@@ -32,7 +32,7 @@ public class Main {
                     }
                 }
                 for (int i = 0; i < y.size(); i++) y.set(i, y.get(i) - r);//ลบค่าทุกตัวออกไป2
-                for (int i = 0; i < y.size(); i++) if (y.get(i) <= 0) y.remove(i);
+                for (int i = 0; i < y.size(); ) if (y.get(i) <= 0) y.remove(i);
             }
         }
         for (int i = 0; i < testCase; i++) System.out.println(rock[i]);
