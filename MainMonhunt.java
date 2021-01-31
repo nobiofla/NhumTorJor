@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Collections;
 
-public class MainMonhunt {
+public class Main {
     static Scanner scn = new Scanner(System.in);
     public static void main(String[] args) {
         int n, r,testCase;
@@ -18,21 +18,26 @@ public class MainMonhunt {
             Collections.sort(y);
             while (y.size() > 0) {//รอบ1 j = 1//รอบ2 j = 2
                 rock[round]++;
-                for (int i = y.size() - 1; i >= 0; i--){//3//2//1//0
+                for (int i = y.size() - 1; i >= 0; i--){//
                     if (i == 0) {
                         y.remove(i);//
                         break;
                     }
-                    else if (y.get(i) == y.get(i - 1)) {//5 == 5//5 == 5//5 == 5
-                        y.remove(i);//5 5 5//5 5//5
+                    else if (y.get(i) == y.get(i - 1)) {//
+                        y.remove(i);//
                     }
                     else {
-                        y.remove(i);//
+                        y.remove(i);//3 5
                         break;
                     }
                 }
-                for (int i = 0; i < y.size(); i++) y.set(i, y.get(i) - r);//ลบค่าทุกตัวออกไป2
-                for (int i = 0; i < y.size(); ) if (y.get(i) <= 0) y.remove(i);
+                System.out.println("Hey");
+                for (int i = 0; i < y.size(); i++) y.set(i, y.get(i) - r);//1
+                System.out.println("Hey");
+                for (int i = 0; i < y.size(); ) {
+                    if (y.get(i) <= 0) y.remove(i);
+                    else break;
+                }
             }
         }
         for (int i = 0; i < testCase; i++) System.out.println(rock[i]);
