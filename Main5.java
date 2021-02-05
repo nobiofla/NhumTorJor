@@ -1,28 +1,27 @@
 import java.util.Scanner;
 
-public class Main {
+public class Main5 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int c = sc.nextInt();
-        int d = sc.nextInt();
+        double a = sc.nextInt();
+        double b = sc.nextInt();
+        double c = sc.nextInt();
+        double d = sc.nextInt();
         double p;
-        String Elijah;
-        if ((double)a/b > (double)c/d) {
-            p = (double)a/b;
-            Elijah = "Sniper";
+
+        if (a/b > c/d) {
+            p = a/b;
+            System.out.println("Sniper");
         }
-        else if ((double)c/d > (double)a/b) {
-            p = (double)c/d;
-            Elijah = "Sling shooter";
+        else if (a/b < c/d) {
+            p = c/d;
+            System.out.println("Sling Shooter");
         }
         else {
             p = 0;
-            Elijah = "NONE";
+            System.out.println("NONE");    
         }
-        System.out.println(Elijah);
-        System.out.printf("%2f",p);
+        System.out.printf("%1.2f",(1-p));
     }
 }
