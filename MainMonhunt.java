@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Collections;
 
-public class Main {
+public class MainMonhunt {
     static Scanner scn = new Scanner(System.in);
     public static void main(String[] args) {
         int n, r,testCase;
@@ -31,9 +31,7 @@ public class Main {
                         break;
                     }
                 }
-                System.out.println("Hey");
                 for (int i = 0; i < y.size(); i++) y.set(i, y.get(i) - r);//1
-                System.out.println("Hey");
                 for (int i = 0; i < y.size(); ) {
                     if (y.get(i) <= 0) y.remove(i);
                     else break;
