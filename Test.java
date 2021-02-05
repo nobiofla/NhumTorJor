@@ -7,6 +7,6 @@ public class Test {
         int max = Arrays.stream(x).max().getAsInt();
         System.out.println(max);
 
-        
+        System.out.println("BANANA");
     }
 }
