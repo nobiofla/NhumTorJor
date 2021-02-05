@@ -13,15 +13,17 @@ public class Main5 {
         if (a/b > c/d) {
             p = a/b;
             System.out.println("Sniper");
+            System.out.printf("%1.2f",(1-p));
         }
         else if (a/b < c/d) {
             p = c/d;
             System.out.println("Sling Shooter");
+            System.out.printf("%1.2f",(1-p));
         }
         else {
             p = 0;
             System.out.println("NONE");    
+            System.out.printf("0");
         }
-        System.out.printf("%1.2f",(1-p));
     }
 }
